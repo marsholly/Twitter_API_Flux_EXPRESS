@@ -3,3 +3,22 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.main {
+  margin-top: 30px;
+}
+
+.thumbnail {
+  height: 400px;
+  box-shadow:12px 8px 8px #AEB6BF;
+  padding: 10px;
+}
+
+.imgDiv {
+  margin-left: 20px;
+  float: left;
+}
+
+.nameDiv {
+  margin-left: 40px;
+}

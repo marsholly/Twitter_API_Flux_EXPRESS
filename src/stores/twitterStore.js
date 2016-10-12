@@ -2,6 +2,7 @@ import { EventEmitter } from 'events';
 import AppDispatcher from '../AppDispatcher';
 
 let _results = [];
+let _savedTweets = [];
 
 class TwitterStore extends EventEmitter {
   constructor() {
@@ -15,6 +16,11 @@ class TwitterStore extends EventEmitter {
           this.emit('CHANGE');
           break;
 
+        case 'RECIEVE_SAVED_TWEETS':
+          let { savedTweets } = action.payload;
+          _savedTweets = savedTweets;
+          this.emit('CHANGE');
+          break;
       }
     });
   }
@@ -29,6 +35,10 @@ class TwitterStore extends EventEmitter {
 
   getSearchResults() {
     return _results;
+  }
+
+  getSavedTweets() {
+    return _savedTweets;
   }
 }
 

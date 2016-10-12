@@ -6,6 +6,13 @@ const ServerActions = {
       type: 'RECIEVE_SEARCH_RESULTS',
       payload: { result }
     })
+  },
+
+  recieveSavedTweets(savedTweets) {
+    AppDispatcher.dispatch({
+      type: 'RECIEVE_SAVED_TWEETS',
+      payload: { savedTweets }
+    })
   }
 }
 

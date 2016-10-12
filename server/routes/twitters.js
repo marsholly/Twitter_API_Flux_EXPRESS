@@ -2,14 +2,6 @@ const express = require('express')
 const router = express.Router();
 const Twitter = require('../models/twitter');
 
-router.route('/:keyWords')
-  .get((req, res) => {
-    let keyWords = req.params.keyWords;
-    Twitter.getTweets(keyWords, (err, tweets) => {
-      res.status(err ? 400: 200).send(err || tweets);
-    })
-  });
-
 router.route('/save')
   .get((req, res) => {
     Twitter.getSomeTweets((err, savedTweets) => {
@@ -19,6 +11,15 @@ router.route('/save')
   .post((req, res) => {
     Twitter.saveTweet(req.body, (err, savedTweets) => {
       res.status(err ? 400: 200).send(err || savedTweets);
+    })
+  });
+
+
+router.route('/:keyWords')
+  .get((req, res) => {
+    let keyWords = req.params.keyWords;
+    Twitter.getTweets(keyWords, (err, tweets) => {
+      res.status(err ? 400: 200).send(err || tweets);
     })
   });
 

@@ -49,7 +49,9 @@ exports.saveTweet = (body, cb) => {
 exports.deleteTweet = (id, cb) => {
   exports.getSomeTweets((err, data) => {
     if (err) return cb(err);
-    let updatedData = data.filter(tweet => tweet.id !== id);
+    let updatedData = data.filter(tweet => {
+      return Number(tweet.id) !== Number(id)
+    });
     exports.write(updatedData, cb);
     cb(null, updatedData);
   });
