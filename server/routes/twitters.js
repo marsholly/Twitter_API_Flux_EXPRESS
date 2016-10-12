@@ -9,5 +9,24 @@ router.route('/')
     })
   })
 
+router.route('/save')
+  .get((req, res) => {
+    Twitter.getSomeTweets((err, savedTweets) => {
+      res.status(err ? 400: 200).send(err || savedTweets);
+    })
+  })
+  .post((req, res) => {
+    Twitter.saveTweet(req.body, (err, savedTweets) => {
+      res.status(err ? 400: 200).send(err || savedTweets);
+    })
+  })
+router.route('/save/:id')
+  .delete((req, res) => {
+    let id = req.params.id;
+    Twitter.deleteTweet(id, (err, undeletedTweets) => {
+      res.status(err ? 400: 200).send(err || undeletedTweets);
+    })
+  })
+
 
 module.exports = router;
