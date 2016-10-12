@@ -6,6 +6,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import Layout from './components/Layout';
 import SearchPage from './components/SearchPage';
 import SavedTweets from './components/SavedTweets';
+import Welcome from './components/Welcome';
 
 
 injectTapEventPlugin();
@@ -13,6 +14,7 @@ injectTapEventPlugin();
 render(
   <Router history={browserHistory}>
     <Route path='/' component={Layout}>
+     <IndexRoute component={Welcome}></IndexRoute>
       <Route path='searchPage' component={SearchPage}/>
       <Route path='savedTweets' component={SavedTweets}/>
     </Route>

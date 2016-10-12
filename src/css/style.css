@@ -22,3 +22,9 @@
 .nameDiv {
   margin-left: 40px;
 }
+
+.intro {
+  padding: 60px;
+  font-family: cursive;
+  text-align: center;
+}
