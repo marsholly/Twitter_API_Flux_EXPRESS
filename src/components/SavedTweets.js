@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import TwitterStore from '../stores/TwitterStore';
 import TwitterActions from '../actions/TwitterActions';
 import moment from 'moment';
+import RaisedButton from 'material-ui/RaisedButton';
+
+const style = {
+  margin: 0,
+};
 
 export default class SavedTweets extends Component {
   constructor () {
@@ -56,8 +61,15 @@ export default class SavedTweets extends Component {
               <div className="caption">
                 <p>{text}</p>
                 <p>{moment(Date.parse(created_at)).format('lll')}</p>
-                <p><a className="btn btn-danger btn-xs" role="button" onClick={this._removeTweet.bind(this, id)}><i className="glyphicon glyphicon-trash"></i></a></p>
               </div>
+              <RaisedButton
+              label="DELETE"
+              style={style}
+              onClick={this._removeTweet.bind(this, id)}
+              fullWidth={true}
+              backgroundColor='#7E57C2'
+              labelColor = 'white'
+              />
             </div>
           </div>
         )

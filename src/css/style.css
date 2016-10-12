@@ -12,6 +12,7 @@
   height: 400px;
   box-shadow:12px 8px 8px #AEB6BF;
   padding: 10px;
+  position: relative;
 }
 
 .imgDiv {
@@ -20,11 +21,44 @@
 }
 
 .nameDiv {
-  margin-left: 40px;
+  margin-left: 120px;
 }
 
 .intro {
-  padding: 60px;
   font-family: cursive;
   text-align: center;
+}
+
+.content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60em;
+  margin-top: 60px;
+}
+
+.caption {
+  height: 15em;
+}
+
+.checkBox {
+  border: 2px solid blue;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.screenName {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.timeStamp {
+  font-style: italic;
+  color: green
+}
+
+.change-background {
+  background-color: #B3E5FC;
 }
