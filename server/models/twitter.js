@@ -12,9 +12,8 @@ var client = new Twitter({
   access_token_secret: process.env.access_token_secret
 });
 
-var params = {screen_name: 'nodejs'};
-exports.getTweets = (cb) =>{
-  client.get('statuses/user_timeline', params, (err, tweets, response)=>{
+exports.getTweets = (keyWords, cb) =>{
+  client.get(`https://api.twitter.com/1.1/search/tweets.json?q=${keyWords}&count=20`, (err, tweets, response)=>{
     if(err) return cb(err);
     return cb(null, tweets);
   })
